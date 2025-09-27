@@ -54,7 +54,7 @@ $users = $userModel->getUsers($params);
                             <td>
                                 <?php echo $user['type']?>
                             </td>
-                        
+                            
                             <td>
                                 <a href="form_user.php?id=<?php echo $user['id'] ?>">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true" title="Update"></i>
@@ -65,22 +65,6 @@ $users = $userModel->getUsers($params);
                                 <a href="delete_user.php?id=<?php echo $user['id'] ?>">
                                     <i class="fa fa-eraser" aria-hidden="true" title="Delete"></i>
                                 </a>
-                            </td>
-<!--   -->
-                            <td>
-                                <a href="form_user.php?id=<?php echo $user['id'] ?>">
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true" title="Update"></i>
-                                </a>
-                                <a href="view_user.php?id=<?php echo $user['id'] ?>">
-                                    <i class="fa fa-eye" aria-hidden="true" title="View"></i>
-                                </a>
-                                <form method="post" action="delete_user.php" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this user?')">
-                                    <input type="hidden" name="id" value="<?php echo $user['id'] ?>">
-                                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? '' ?>">
-                                    <button type="submit" style="background: none; border: none; color: red; cursor: pointer;">
-                                        <i class="fa fa-eraser" aria-hidden="true" title="Delete"></i>
-                                    </button>
-                                </form>
                             </td>
 
                         </tr>
